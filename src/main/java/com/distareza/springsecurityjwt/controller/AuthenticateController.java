@@ -23,11 +23,11 @@ public class AuthenticateController {
 	public String generateToken(@RequestBody AuthRequest authRequest) throws Exception { 
 		
 		try {
-		authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(
-						authRequest.getUserName(), 
-						authRequest.getPassword())
-		);
+			authenticationManager.authenticate(
+					new UsernamePasswordAuthenticationToken(
+							authRequest.getUserName(), 
+							authRequest.getPassword())
+			);
 		} catch (Exception ex) {
 			throw new Exception("Invalid username/password");
 		}
